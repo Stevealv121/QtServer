@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <QDataStream>
 
 class Server : public QObject
 {

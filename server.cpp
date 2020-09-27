@@ -14,6 +14,7 @@ Server::Server(QObject *parent) :
     else
     {
         qDebug() << "Server started!";
+
     }
 }
 
@@ -28,3 +29,6 @@ void Server::newConnection()
 
     socket->close();
 }
+
+
+
