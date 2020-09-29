@@ -5,6 +5,7 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QDataStream>
+#include "floydwarshall.h"
 
 class Server : public QObject
 {
@@ -16,6 +17,7 @@ signals:
 
 public slots:
     void newConnection();
+    QStringList getTest();
 
 private:
     QTcpServer *server;

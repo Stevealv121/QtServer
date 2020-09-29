@@ -3,7 +3,7 @@
 
 #include "graph.h"
 
-#define VERTEX 5
+#define VERTEX 4
 #define INFINITE 99999
 
 

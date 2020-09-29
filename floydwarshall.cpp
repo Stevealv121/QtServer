@@ -25,7 +25,7 @@ void FloydWarshall::printMatrix(int matrix[][VERTEX])
 void FloydWarshall::floydWarshall(int graph[][VERTEX])
 {
 
-    int matrix[VERTEX][VERTEX];
+//    int matrix[VERTEX][VERTEX];
     int i, j, k;
 
     for (i = 0; i <VERTEX; i++){
@@ -39,8 +39,8 @@ void FloydWarshall::floydWarshall(int graph[][VERTEX])
         for (i=0; i<VERTEX; i++){
             for (j=0; j<VERTEX; j++){
 
-                if (matrix[i][j] + matrix[i][j] < matrix[i][j]){
-                    matrix[i][j] = matrix[i][j] + matrix[i][j];
+                if (matrix[i][k] + matrix[k][j] < matrix[i][j]){
+                    matrix[i][j] = matrix[i][k] + matrix[k][j];
                 }
             }
         }
@@ -49,3 +49,4 @@ void FloydWarshall::floydWarshall(int graph[][VERTEX])
     printMatrix(matrix);
 
 }
+
