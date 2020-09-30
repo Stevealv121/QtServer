@@ -1,38 +1,63 @@
 #include "graph.h"
 
+/**
+ * @brief Inserta newNodes en la lista adyacente del
+ * grafo dado, apunta newNode hacia el actual head
+ *
+ * @param value Valor del vertice que se dirige
+ * @param weight Peso de la arista entre vertices
+ * @param head Vertice head
+ * @return Graph::adjNode
+ */
 Graph::adjNode *Graph::getAdjListNode(int value, int weight, Graph::adjNode *head) {
 
     adjNode* newNode = new adjNode;
     newNode->val = value;
     newNode->cost = weight;
 
-    newNode->next = head;   // point new node to current head
+    newNode->next = head;
     return newNode;
 
 }
 
+/**
+ * @brief Constructor de la clase
+ * Asigna memoria para un nuevo nodo.
+ * Inicializa puntero head para todos los vertices
+ * Construye grafo dirigido agregandole aristas
+ * Inserta newNode al principio
+ * Apunta el puntero head a newNode
+ *
+ * @param edges Array de aristas del grafo
+ * @param n Numero de aristas
+ * @param N Numero de verties en el grafo
+ */
 Graph::Graph(Graph::graphEdge *edges, int n, int N) {
 
-    // allocate new node
+
     head = new adjNode*[N]();
     this->N = N;
-    // initialize head pointer for all vertices
+
     for (int i = 0; i < N; ++i)
         head[i] = nullptr;
-    // construct directed graph by adding edges to it
-    for (unsigned i = 0; i < n; i++)  {
+
+    for (int i = 0; i < n; i++)  {
         int start_ver = edges[i].start;
         int end_ver = edges[i].end;
         int weight = edges[i].weight;
-        // insert in the beginning
+
         adjNode* newNode = getAdjListNode(end_ver, weight, head[start_ver]);
 
-        // point head pointer to new node
+
         head[start_ver] = newNode;
     }
 
 }
 
+/**
+ * @brief Destructor de Graph: Libera espacio
+ *
+ */
 Graph::~Graph() {
 
     for (int i = 0; i < N; i++) {
@@ -42,12 +67,17 @@ Graph::~Graph() {
 
 }
 
+/**
+ * @brief Imprime todos los vertices adyacentes del vertice dado
+ *
+ * @param ptr puntero head
+ * @param i vertice
+ */
 void Graph::printAdjList(Graph::adjNode *ptr, int i) {
 
     while (ptr != nullptr) {
 
         qDebug()<<"("<<i<<","<< ptr->val<< ", " << ptr->cost << ") ";
-        //qDebug()<<"\n";
         ptr = ptr->next;
     }
 

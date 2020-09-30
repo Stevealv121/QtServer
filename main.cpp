@@ -21,16 +21,6 @@ int main(int argc, char *argv[])
 //        graph.printAdjList(graph.head[i], i);
 //    }
 
-//    FloydWarshall algorithm;
-
-//    int graph[VERTEX][VERTEX] = { {0, 5, INFINITE, 10},
-//                            {INFINITE, 0, 3, INFINITE},
-//                            {INFINITE, INFINITE, 0, 1},
-//                            {INFINITE, INFINITE, INFINITE, 0},
-//                                  {0, 5, INFINITE, 10}
-//        };
-
-//    algorithm.floydWarshall(graph);
 
     Server server;
 

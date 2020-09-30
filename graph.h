@@ -5,7 +5,7 @@
 
 
 /**
- * Implementation of a graph structure using adjacency list
+ * Implementacion de un grafo utlizando una lista adyacente
  */
 class Graph {
 
@@ -19,7 +19,7 @@ public:
     };
 
     /**
-     * Get adjacency list node
+     * Obtiene adjacency list node
      * @param value of vertex
      * @param weight of edge
      * @param head node
@@ -34,9 +34,20 @@ public:
         int start, end, weight;
     };
 
-    adjNode **head;
+    adjNode **head; /**< TODO: describe */
 
+    /**
+     * @brief Constructor
+     *
+     * @param edges[] Aristas
+     * @param n numero de aristas
+     * @param N numero de vertices
+     */
     Graph(graphEdge edges[], int n, int N);
+    /**
+     * @brief Destructor
+     *
+     */
     ~Graph();
     /**
      * Print graph: edges representation

@@ -18,11 +18,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp \
     floydwarshall.cpp \
     graph.cpp \
-    list.cpp \
     server.cpp
 
 HEADERS += \
     floydwarshall.h \
     graph.h \
-    list.h \
     server.h

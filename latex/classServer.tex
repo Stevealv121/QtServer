@@ -1,0 +1,90 @@
+\hypertarget{classServer}{}\section{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+Servidor el cual almacena el algoritmo de Floyd-\/\+Warshall y permite conectarse al cliente mediante socket.  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+
+
+Inheritance diagram for Server\+:
+% FIG 0
+
+
+Collaboration diagram for Server\+:
+% FIG 1
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classServer_a4caf81e22e3a0535dd5955b422b897f0}{new\+Connection} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT encargada de la nueva conexion. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{classServer_a257377ec86bcf1986bd5187ce99f3258}{get\+Test} ()
+\begin{DoxyCompactList}\small\item\em Genera una lista con el resultado del algortimo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classServer_a1950ac036d86af898428d7ba39bbf048}{Server} (Q\+Object $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor del \hyperlink{classServer}{Server}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Servidor el cual almacena el algoritmo de Floyd-\/\+Warshall y permite conectarse al cliente mediante socket. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_a1950ac036d86af898428d7ba39bbf048}\label{classServer_a1950ac036d86af898428d7ba39bbf048}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\subsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor del \hyperlink{classServer}{Server}. 
+
+Constructor de la clase \hyperlink{classServer}{Server} Crea un nuevo Q\+Tcp\+Server. Genera un signal y slot para la nueva conexion. Se asegura de que el servidor este escuchando, en otras palabras que se haya iniciado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_a257377ec86bcf1986bd5187ce99f3258}\label{classServer_a257377ec86bcf1986bd5187ce99f3258}} 
+\index{Server@{Server}!get\+Test@{get\+Test}}
+\index{get\+Test@{get\+Test}!Server@{Server}}
+\subsubsection{\texorpdfstring{get\+Test}{getTest}}
+{\footnotesize\ttfamily Q\+String\+List Server\+::get\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Genera una lista con el resultado del algortimo. 
+
+Encargado de generar el grafo, y hacer la prueba del algoritmo Floyd-\/\+Warshall. Almacena el resultado de la prueba en una Q\+String\+List.
+
+\begin{DoxyReturn}{Returns}
+Q\+String\+List resutado del algoritmo
+
+Q\+String\+List que contiene el resultado de la prueba del algoritmo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_a4caf81e22e3a0535dd5955b422b897f0}\label{classServer_a4caf81e22e3a0535dd5955b422b897f0}} 
+\index{Server@{Server}!new\+Connection@{new\+Connection}}
+\index{new\+Connection@{new\+Connection}!Server@{Server}}
+\subsubsection{\texorpdfstring{new\+Connection}{newConnection}}
+{\footnotesize\ttfamily void Server\+::new\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+S\+L\+OT encargada de la nueva conexion. 
+
+Crea un socket para la conexion Envia la lista que contiene las distancia mas corta entre cada par de vertices, esta lista es codificada en Q\+Byte\+Array utilizando Q\+Data\+Stream y luego es escrita al socket. Primero se crea los objetos Q\+Byte\+Array y Q\+Data\+Stream, pasando el Q\+Byte\+Array al constructor de Q\+Data\+Stream, despues se establece la version Qt\+\_\+4\+\_\+0 para asegurarnos la comunicacion con el cliente. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server.\+h\item 
+server.\+cpp\end{DoxyCompactItemize}

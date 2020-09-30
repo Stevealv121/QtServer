@@ -1,5 +1,13 @@
 #include "server.h"
 
+/**
+ * @brief Constructor de la clase Server
+ * Crea un nuevo QTcpServer.
+ * Genera un signal y slot para la nueva conexion.
+ * Se asegura de que el servidor este escuchando, en otras palabras que se haya iniciado.
+ *
+ * @param parent
+ */
 Server::Server(QObject *parent) :
     QObject(parent)
 {
@@ -18,6 +26,15 @@ Server::Server(QObject *parent) :
     }
 }
 
+/**
+ * @brief Crea un socket para la conexion
+ * Envia la lista que contiene las distancia mas corta entre cada par de vertices,
+ * esta lista es codificada en QByteArray utilizando QDataStream y luego es escrita
+ * al socket. Primero se crea los objetos QByteArray y QDataStream, pasando el QByteArray
+ * al constructor de QDataStream, despues se establece la version Qt_4_0 para asegurarnos
+ * la comunicacion con el cliente.
+ *
+ */
 void Server::newConnection()
 {
     QTcpSocket *socket = server->nextPendingConnection();
@@ -26,7 +43,6 @@ void Server::newConnection()
     QDataStream out(&block, QIODevice::WriteOnly);
 
     QStringList test;
-    QString hello = "hello client";
 
     test = getTest();
 
@@ -34,24 +50,29 @@ void Server::newConnection()
 
     out << test;
 
-//    socket->write("hello client\r\n");
     socket->write(block);
     socket->flush();
-
     socket->waitForBytesWritten(3000);
-
     socket->close();
 }
 
+/**
+ * @brief Encargado de generar el grafo, y hacer la prueba
+ * del algoritmo Floyd-Warshall. Almacena el resultado de la
+ * prueba en una QStringList.
+ *
+ * @return QStringList que contiene el resultado de la prueba del algoritmo
+ */
 QStringList Server::getTest()
 {
     QStringList test;
 
 
-    int graph[VERTEX][VERTEX] = { {0, 5, INFINITE, 10},
-                            {INFINITE, 0, 3, INFINITE},
-                            {INFINITE, INFINITE, 0, 1},
-                            {INFINITE, INFINITE, INFINITE, 0}
+    int graph[VERTEX][VERTEX] = { {0, 8, INFINITE, INFINITE,12},
+                            {INFINITE, 0, 3, INFINITE,INFINITE},
+                            {INFINITE, INFINITE, 0, 5,INFINITE},
+                            {INFINITE, INFINITE, INFINITE, 0,5},
+                            {INFINITE, INFINITE, INFINITE, INFINITE,0}
         };
 
     FloydWarshall algorithm;

@@ -1,0 +1,85 @@
+\hypertarget{classFloydWarshall}{}\section{Floyd\+Warshall Class Reference}
+\label{classFloydWarshall}\index{Floyd\+Warshall@{Floyd\+Warshall}}
+
+
+Implementacion Algoritmo Floyd-\/\+Warshall.  
+
+
+
+
+{\ttfamily \#include $<$floydwarshall.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFloydWarshall_a389140068c03fe74d3e8b01721a1681b}\label{classFloydWarshall_a389140068c03fe74d3e8b01721a1681b}} 
+\hyperlink{classFloydWarshall_a389140068c03fe74d3e8b01721a1681b}{Floyd\+Warshall} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classFloydWarshall_aef3b3e3377992e6c4e7af01a64e710d7}{print\+Matrix} (int \hyperlink{classFloydWarshall_a391d930a37f05729d69d27374e715c33}{matrix}\mbox{[}$\,$\mbox{]}\mbox{[}V\+E\+R\+T\+EX\mbox{]})
+\begin{DoxyCompactList}\small\item\em Imprime el resultado del algoritmo. \end{DoxyCompactList}\item 
+void \hyperlink{classFloydWarshall_a75a05e1f9ae7d6edc9c7efeffe19ac74}{floyd\+Warshall} (int graph\mbox{[}$\,$\mbox{]}\mbox{[}V\+E\+R\+T\+EX\mbox{]})
+\begin{DoxyCompactList}\small\item\em Genera la solucion del algortimo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classFloydWarshall_a391d930a37f05729d69d27374e715c33}{matrix} \mbox{[}V\+E\+R\+T\+EX\mbox{]}\mbox{[}V\+E\+R\+T\+EX\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementacion Algoritmo Floyd-\/\+Warshall. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFloydWarshall_a75a05e1f9ae7d6edc9c7efeffe19ac74}\label{classFloydWarshall_a75a05e1f9ae7d6edc9c7efeffe19ac74}} 
+\index{Floyd\+Warshall@{Floyd\+Warshall}!floyd\+Warshall@{floyd\+Warshall}}
+\index{floyd\+Warshall@{floyd\+Warshall}!Floyd\+Warshall@{Floyd\+Warshall}}
+\subsubsection{\texorpdfstring{floyd\+Warshall()}{floydWarshall()}}
+{\footnotesize\ttfamily void Floyd\+Warshall\+::floyd\+Warshall (\begin{DoxyParamCaption}\item[{int}]{graph\mbox{[}$\,$\mbox{]}\mbox{[}\+V\+E\+R\+T\+E\+X\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Genera la solucion del algortimo. 
+
+Soluciona el camino mas corto de todos los pares, utilizando el algortimo F\+Loyd-\/\+Warshall Inicializa la solucion por obtener los datos del graph y guardarlos en matrix. Luego agrega todos los vertices, uno por uno, al conjunto de vertices intermedios. Antes de empezar la iteracion, tenemos todas las distancias mas cortas entre pares de vertices tal que la distancia mas corta considere solo los vertices del conjunto \{0,1,2,...,k-\/1\} como vertices intermedios . Despues del final de la iteracion, el vertice k es agregado al conjunto de vertices intermedios y el conjunto se convierte en \{0,1,2,...,k\}. Entonces se eligen todos los vertices origen uno por uno, luego se escogen todos los vertices como destinacion de los vertices origen elegidos y si el vertice k esta en la ruta mas corta entre i y j, entonces se actualiza el valor en matrix\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} Por ultimo se imprime la solucion del algoritmo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & grafo a resolver\\
+\hline
+{\em graph\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFloydWarshall_aef3b3e3377992e6c4e7af01a64e710d7}\label{classFloydWarshall_aef3b3e3377992e6c4e7af01a64e710d7}} 
+\index{Floyd\+Warshall@{Floyd\+Warshall}!print\+Matrix@{print\+Matrix}}
+\index{print\+Matrix@{print\+Matrix}!Floyd\+Warshall@{Floyd\+Warshall}}
+\subsubsection{\texorpdfstring{print\+Matrix()}{printMatrix()}}
+{\footnotesize\ttfamily void Floyd\+Warshall\+::print\+Matrix (\begin{DoxyParamCaption}\item[{int}]{matrix\mbox{[}$\,$\mbox{]}\mbox{[}\+V\+E\+R\+T\+E\+X\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Imprime el resultado del algoritmo. 
+
+Imprime un array 2D, que en este caso representa un array con el resultado del algoritmo aplicado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & \\
+\hline
+{\em matrix\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & 2D Array representacion del grafo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classFloydWarshall_a391d930a37f05729d69d27374e715c33}\label{classFloydWarshall_a391d930a37f05729d69d27374e715c33}} 
+\index{Floyd\+Warshall@{Floyd\+Warshall}!matrix@{matrix}}
+\index{matrix@{matrix}!Floyd\+Warshall@{Floyd\+Warshall}}
+\subsubsection{\texorpdfstring{matrix}{matrix}}
+{\footnotesize\ttfamily int Floyd\+Warshall\+::matrix\mbox{[}V\+E\+R\+T\+EX\mbox{]}\mbox{[}V\+E\+R\+T\+EX\mbox{]}}
+
+Almacena solucion del algortimo 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+floydwarshall.\+h\item 
+floydwarshall.\+cpp\end{DoxyCompactItemize}

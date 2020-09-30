@@ -7,20 +7,39 @@
 #include <QDataStream>
 #include "floydwarshall.h"
 
+/**
+ * @brief Servidor el cual almacena el algoritmo de Floyd-Warshall y
+ * permite conectarse al cliente mediante socket
+ *
+ */
 class Server : public QObject
 {
     Q_OBJECT
 public:
+    /**
+     * @brief Constructor del Server
+     *
+     * @param parent
+     */
     explicit Server(QObject *parent = 0);
 
 signals:
 
 public slots:
+    /**
+     * @brief SLOT encargada de la nueva conexion
+     *
+     */
     void newConnection();
+    /**
+     * @brief Genera una lista con el resultado del algortimo
+     *
+     * @return QStringList resutado del algoritmo
+     */
     QStringList getTest();
 
 private:
-    QTcpServer *server;
+    QTcpServer *server; /**< server */
 };
 
 #endif // SERVER_H

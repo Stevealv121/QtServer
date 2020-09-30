@@ -1,0 +1,149 @@
+\hypertarget{classGraph}{}\section{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+
+
+Collaboration diagram for Graph\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structGraph_1_1adjNode}{adj\+Node}
+\item 
+struct \hyperlink{structGraph_1_1graphEdge}{graph\+Edge}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structGraph_1_1adjNode}{adj\+Node} $\ast$ \hyperlink{classGraph_af9e1105f356e75f0408e8a1cce442da6}{get\+Adj\+List\+Node} (int value, int weight, \hyperlink{structGraph_1_1adjNode}{adj\+Node} $\ast$\hyperlink{classGraph_a44e3d4a9b9f43c763079a32c54620a6d}{head})
+\begin{DoxyCompactList}\small\item\em Inserta new\+Nodes en la lista adyacente del grafo dado, apunta new\+Node hacia el actual head. \end{DoxyCompactList}\item 
+\hyperlink{classGraph_ac99da1bc224a89e7528743e0d05153f5}{Graph} (\hyperlink{structGraph_1_1graphEdge}{graph\+Edge} edges\mbox{[}$\,$\mbox{]}, int n, int N)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classGraph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\+Graph} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classGraph_a1fdf4817d1c7884eac711b395f68bb89}{print\+Adj\+List} (\hyperlink{structGraph_1_1adjNode}{adj\+Node} $\ast$ptr, int i)
+\begin{DoxyCompactList}\small\item\em Imprime todos los vertices adyacentes del vertice dado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structGraph_1_1adjNode}{adj\+Node} $\ast$$\ast$ \hyperlink{classGraph_a44e3d4a9b9f43c763079a32c54620a6d}{head}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementacion de un grafo utlizando una lista adyacente 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGraph_ac99da1bc224a89e7528743e0d05153f5}\label{classGraph_ac99da1bc224a89e7528743e0d05153f5}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{\hyperlink{structGraph_1_1graphEdge}{graph\+Edge}}]{edges\mbox{[}$\,$\mbox{]},  }\item[{int}]{n,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Constructor de la clase Asigna memoria para un nuevo nodo. Inicializa puntero head para todos los vertices Construye grafo dirigido agregandole aristas Inserta new\+Node al principio Apunta el puntero head a new\+Node.
+
+
+\begin{DoxyParams}{Parameters}
+{\em edges\mbox{[}$\,$\mbox{]}} & Aristas \\
+\hline
+{\em n} & numero de aristas \\
+\hline
+{\em N} & numero de vertices\\
+\hline
+{\em edges} & Array de aristas del grafo \\
+\hline
+{\em n} & Numero de aristas \\
+\hline
+{\em N} & Numero de verties en el grafo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGraph_a902c5b3eacb66d60752525ab23297a95}\label{classGraph_a902c5b3eacb66d60752525ab23297a95}} 
+\index{Graph@{Graph}!````~Graph@{$\sim$\+Graph}}
+\index{````~Graph@{$\sim$\+Graph}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{$\sim$\+Graph()}{~Graph()}}
+{\footnotesize\ttfamily Graph\+::$\sim$\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Destructor de \hyperlink{classGraph}{Graph}\+: Libera espacio. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGraph_af9e1105f356e75f0408e8a1cce442da6}\label{classGraph_af9e1105f356e75f0408e8a1cce442da6}} 
+\index{Graph@{Graph}!get\+Adj\+List\+Node@{get\+Adj\+List\+Node}}
+\index{get\+Adj\+List\+Node@{get\+Adj\+List\+Node}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Adj\+List\+Node()}{getAdjListNode()}}
+{\footnotesize\ttfamily \hyperlink{structGraph_1_1adjNode}{Graph\+::adj\+Node} $\ast$ Graph\+::get\+Adj\+List\+Node (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{weight,  }\item[{\hyperlink{structGraph_1_1adjNode}{Graph\+::adj\+Node} $\ast$}]{head }\end{DoxyParamCaption})}
+
+
+
+Inserta new\+Nodes en la lista adyacente del grafo dado, apunta new\+Node hacia el actual head. 
+
+Obtiene adjacency list node 
+\begin{DoxyParams}{Parameters}
+{\em value} & of vertex \\
+\hline
+{\em weight} & of edge \\
+\hline
+{\em head} & node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+adjacency list node
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Valor del vertice que se dirige \\
+\hline
+{\em weight} & Peso de la arista entre vertices \\
+\hline
+{\em head} & Vertice head \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structGraph_1_1adjNode}{Graph\+::adj\+Node} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_a1fdf4817d1c7884eac711b395f68bb89}\label{classGraph_a1fdf4817d1c7884eac711b395f68bb89}} 
+\index{Graph@{Graph}!print\+Adj\+List@{print\+Adj\+List}}
+\index{print\+Adj\+List@{print\+Adj\+List}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{print\+Adj\+List()}{printAdjList()}}
+{\footnotesize\ttfamily void Graph\+::print\+Adj\+List (\begin{DoxyParamCaption}\item[{\hyperlink{structGraph_1_1adjNode}{Graph\+::adj\+Node} $\ast$}]{ptr,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Imprime todos los vertices adyacentes del vertice dado. 
+
+Print graph\+: edges representation 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & node \\
+\hline
+{\em i} & index\\
+\hline
+{\em ptr} & puntero head \\
+\hline
+{\em i} & vertice \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classGraph_a44e3d4a9b9f43c763079a32c54620a6d}\label{classGraph_a44e3d4a9b9f43c763079a32c54620a6d}} 
+\index{Graph@{Graph}!head@{head}}
+\index{head@{head}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \hyperlink{structGraph_1_1adjNode}{adj\+Node}$\ast$$\ast$ Graph\+::head}
+
+T\+O\+DO\+: describe 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+graph.\+h\item 
+graph.\+cpp\end{DoxyCompactItemize}
