@@ -25,7 +25,7 @@ public:
      *
      * @param matrix[][]
      */
-    void printMatrix(int matrix[][VERTEX]);
+    bool printMatrix(int matrix[][VERTEX]);
 
     /**
      * @brief Genera la solucion del algortimo
@@ -35,10 +35,6 @@ public:
     void floydWarshall(int graph[][VERTEX]);
 
     int matrix[VERTEX][VERTEX]; /**< Almacena solucion del algortimo */
-
-
-private:
-
 
 
 

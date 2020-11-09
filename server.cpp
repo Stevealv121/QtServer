@@ -35,7 +35,7 @@ Server::Server(QObject *parent) :
  * la comunicacion con el cliente.
  *
  */
-void Server::newConnection()
+bool Server::newConnection()
 {
     QTcpSocket *socket = server->nextPendingConnection();
 
@@ -54,6 +54,8 @@ void Server::newConnection()
     socket->flush();
     socket->waitForBytesWritten(3000);
     socket->close();
+    emit ok();
+    return true;
 }
 
 /**

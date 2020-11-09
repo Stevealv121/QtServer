@@ -24,13 +24,14 @@ public:
     explicit Server(QObject *parent = 0);
 
 signals:
+    void ok();
 
 public slots:
     /**
      * @brief SLOT encargada de la nueva conexion
      *
      */
-    void newConnection();
+    bool newConnection();
     /**
      * @brief Genera una lista con el resultado del algortimo
      *

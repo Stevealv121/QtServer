@@ -15,7 +15,7 @@ FloydWarshall::FloydWarshall()
  *
  * @param matrix[][] 2D Array representacion del grafo
  */
-void FloydWarshall::printMatrix(int matrix[][VERTEX])
+bool FloydWarshall::printMatrix(int matrix[][VERTEX])
 {
     qDebug()<<"The following matrix shows the shortest distances"
             " between every pair of vertices \n";
@@ -30,6 +30,7 @@ void FloydWarshall::printMatrix(int matrix[][VERTEX])
         }
      qDebug()<<"";
     }
+    return true;
 }
 
 /**
