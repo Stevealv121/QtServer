@@ -54,13 +54,13 @@ void TestSuite::testFloydWarshall()
 
 void TestSuite::testNewConnection()
 {
-    //bool flag = server->newConnection();
+    bool flag = server->newConnection();
     QSignalSpy spy(server,SIGNAL(ok()));
     while (spy.count()==0)
         QTest::qWait(5000);
 
 
-    //QCOMPARE(true,flag);
+    QCOMPARE(true,flag);
 }
 
 QTEST_MAIN(TestSuite)
